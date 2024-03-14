@@ -57,6 +57,12 @@ export default function QueryProcessor(query: string): string {
     }
     return (ret);
   }
+  if (query.toLowerCase().includes("to the power of")) {
+    const parts = query.split(" ");
+    const num1 = parseInt(parts[2]);
+    const num2 = parseInt(parts[7]);
+    return (String(num1 ^ num2)); 
+  }
 
   return "";
 }
