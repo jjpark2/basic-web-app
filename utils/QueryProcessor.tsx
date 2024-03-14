@@ -63,6 +63,21 @@ export default function QueryProcessor(query: string): string {
     const num2 = parseInt(parts[7]);
     return (String(num1 ^ num2)); 
   }
+  if (query.toLowerCase().includes("primes")) {
+    const parts = query.split(" ");
+    const num1 = parseInt(parts[2]);
+    const num2 = parseInt(parts[4]);
+    return (String(Math.pow(num1, num2)));
+  }
+  if (query.toLowerCase().includes("both a square and a cube")) {
+    let ret2 = ""
+    const parts = query.split(" ");
+    for (let i = 12; i <= 18; i++) {
+      if () {
+        ret2 = ret2.concat(parts[i]);
+      }
+    }
+    return (ret);
 
   return "";
 }
