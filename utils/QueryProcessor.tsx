@@ -26,6 +26,12 @@ export default function QueryProcessor(query: string): string {
     const num3 = parseInt(parts[10].slice(0, -1));
     return (String(Math.max(num1,num2,num3)))
   }
+  if (query.toLowerCase().includes("multiplied by")) {
+    const parts = query.split(" ");
+    const num1 = parseInt(parts[2]);
+    const num2 = parseInt(parts[5].slice(0, -1));
+    return (String(num1 * num2))
+  }
 
   return "";
 }
