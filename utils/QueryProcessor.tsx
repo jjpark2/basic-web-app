@@ -20,6 +20,13 @@ export default function QueryProcessor(query: string): string {
     const num1 = parseInt(parts[2]);
     const num2 = parseInt(parts[4].slice(0, -1));
     return (String(num1 + num2))
+    
+  }
+  if (query.toLowerCase().includes("minus")) {
+    const parts = query.split(" ");
+    const num1 = parseInt(parts[2]);
+    const num2 = parseInt(parts[4]);
+    return (String(num1 - num2)) 
   }
   if (query.toLowerCase().includes("largest")) {
     const parts = query.split(" ");
@@ -45,7 +52,7 @@ export default function QueryProcessor(query: string): string {
     const parts = query.split(" ");
     for (let i = 12; i <= 18; i++) {
       if ((Math.sqrt(parseInt(parts[1])) % 1 === 0) && Math.cbrt(parseInt(parts[1])) % 1 == 0) {
-        ret = ret.concat(parts[1]);
+        ret = ret.concat(parts[i]);
       }
     }
     return (ret);
