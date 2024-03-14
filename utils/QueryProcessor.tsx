@@ -16,7 +16,7 @@ export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("plus")) {
     const parts = query.split(" ");
     const num1 = parseInt(parts[2]);
-    const num2 = parseInt(parts[4]);
+    const num2 = parseInt(parts[4].slice(0, -1));
     return (String(num1 + num2))
   }
   if (query.toLowerCase().includes("64 plus 8")) {
